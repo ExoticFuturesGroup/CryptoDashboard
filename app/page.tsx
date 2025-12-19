@@ -52,6 +52,14 @@ export default function Home() {
             DeFi Llama, QuickNode, and other trusted sources.
           </p>
         </Link>
+
+        <Link href="/portfolio" className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 hover:border-emerald-500 transition-all">
+          <h2 className="text-2xl font-bold mb-4 text-emerald-400">💼 Portfolio</h2>
+          <p className="text-gray-300">
+            Track your holdings, connect exchange APIs,
+            and analyze portfolio performance with advanced statistics.
+          </p>
+        </Link>
       </div>
 
       <section className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 mt-8">
@@ -65,6 +73,8 @@ export default function Home() {
           <li>✅ Real-time market data integration</li>
           <li>✅ Comprehensive CEFI & DEFI statistics</li>
           <li>✅ Aggregated news from multiple trusted sources</li>
+          <li>✅ Portfolio management with exchange API integration</li>
+          <li>✅ Advanced portfolio analytics and risk metrics</li>
         </ul>
       </section>
     </div>

@@ -67,6 +67,16 @@ export default function Navigation() {
             >
               News
             </Link>
+            <Link 
+              href="/portfolio" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/portfolio') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              Portfolio
+            </Link>
           </div>
         </div>
       </div>
