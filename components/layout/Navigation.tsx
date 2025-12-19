@@ -16,36 +16,56 @@ export default function Navigation() {
             CryptoDashboard
           </Link>
           
-          <div className="flex space-x-8">
+          <div className="flex space-x-6">
+            <Link 
+              href="/market-overview" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/market-overview') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              Market Overview
+            </Link>
             <Link 
               href="/predictions" 
-              className={`px-4 py-2 cursor-pointer transition-colors duration-200 ${
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
                 isActive('/predictions') 
                   ? 'border-b-2 border-blue-500 text-blue-500' 
                   : 'text-gray-400 hover:text-gray-200'
               }`}
             >
-              Market Predictions
+              Predictions
             </Link>
             <Link 
               href="/cefi" 
-              className={`px-4 py-2 cursor-pointer transition-colors duration-200 ${
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
                 isActive('/cefi') 
                   ? 'border-b-2 border-blue-500 text-blue-500' 
                   : 'text-gray-400 hover:text-gray-200'
               }`}
             >
-              CEFI Analytics
+              CEFI
             </Link>
             <Link 
               href="/defi" 
-              className={`px-4 py-2 cursor-pointer transition-colors duration-200 ${
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
                 isActive('/defi') 
                   ? 'border-b-2 border-blue-500 text-blue-500' 
                   : 'text-gray-400 hover:text-gray-200'
               }`}
             >
-              DEFI Analytics
+              DEFI
+            </Link>
+            <Link 
+              href="/news" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/news') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              News
             </Link>
           </div>
         </div>

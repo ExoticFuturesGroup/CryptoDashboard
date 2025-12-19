@@ -12,7 +12,15 @@ export default function Home() {
         </p>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Link href="/market-overview" className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 hover:border-cyan-500 transition-all">
+          <h2 className="text-2xl font-bold mb-4 text-cyan-400">📊 Market Overview</h2>
+          <p className="text-gray-300">
+            Comprehensive market statistics, trends, dominance charts,
+            and key insights on the broader crypto market.
+          </p>
+        </Link>
+
         <Link href="/predictions" className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 hover:border-blue-500 transition-all">
           <h2 className="text-2xl font-bold mb-4 text-blue-400">📈 Market Predictions</h2>
           <p className="text-gray-300">
@@ -36,17 +44,27 @@ export default function Home() {
             and on-chain activity monitoring.
           </p>
         </Link>
+
+        <Link href="/news" className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 hover:border-orange-500 transition-all">
+          <h2 className="text-2xl font-bold mb-4 text-orange-400">📰 Crypto News</h2>
+          <p className="text-gray-300">
+            Latest cryptocurrency news from Messari, CoinGecko,
+            DeFi Llama, QuickNode, and other trusted sources.
+          </p>
+        </Link>
       </div>
 
       <section className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 mt-8">
         <h3 className="text-2xl font-bold mb-4">Key Features</h3>
         <ul className="space-y-2 text-gray-300">
+          <li>✅ Comprehensive market overview with key statistics and trends</li>
           <li>✅ 1-hour price predictions with 3-minute intervals</li>
           <li>✅ 95% confidence interval bounds (upper & lower)</li>
           <li>✅ Long/Short/Neutral position recommendations</li>
           <li>✅ Profit estimates with 10x-20x leverage ($1050 initial margin)</li>
           <li>✅ Real-time market data integration</li>
           <li>✅ Comprehensive CEFI & DEFI statistics</li>
+          <li>✅ Aggregated news from multiple trusted sources</li>
         </ul>
       </section>
     </div>
