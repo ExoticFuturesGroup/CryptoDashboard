@@ -17,14 +17,6 @@ export interface PredictionResult {
   profitAt20x: number
 }
 
-// Calculate standard deviation
-function calculateStdDev(values: number[]): number {
-  const mean = values.reduce((a, b) => a + b, 0) / values.length
-  const squaredDiffs = values.map(v => Math.pow(v - mean, 2))
-  const variance = squaredDiffs.reduce((a, b) => a + b, 0) / values.length
-  return Math.sqrt(variance)
-}
-
 // Generate predictions with 95% confidence intervals
 export function generatePredictions(coin: CoinData): PredictionResult {
   const intervals = 20 // 20 intervals of 3 minutes each = 60 minutes
