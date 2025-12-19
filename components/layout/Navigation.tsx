@@ -77,6 +77,16 @@ export default function Navigation() {
             >
               Portfolio
             </Link>
+            <Link 
+              href="/hype-prediction" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/hype-prediction') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              HYPE
+            </Link>
           </div>
         </div>
       </div>
