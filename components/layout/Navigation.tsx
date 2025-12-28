@@ -1,0 +1,115 @@
+'use client'
+
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+export default function Navigation() {
+  const pathname = usePathname()
+
+  const isActive = (path: string) => pathname === path
+
+  return (
+    <nav className="bg-gray-800 border-b border-gray-700">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+            CryptoDashboard
+          </Link>
+          
+          <div className="flex space-x-6">
+            <Link 
+              href="/market-overview" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/market-overview') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              Market Overview
+            </Link>
+            <Link 
+              href="/predictions" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/predictions') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              Predictions
+            </Link>
+            <Link 
+              href="/cefi" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/cefi') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              CEFI
+            </Link>
+            <Link 
+              href="/defi" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/defi') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              DEFI
+            </Link>
+            <Link 
+              href="/news" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/news') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              News
+            </Link>
+            <Link 
+              href="/portfolio" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/portfolio') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              Portfolio
+            </Link>
+            <Link 
+              href="/hype-prediction" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/hype-prediction') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              HYPE
+            </Link>
+            <Link 
+              href="/hot-tokens" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/hot-tokens') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              🔥 Hot Tokens
+            </Link>
+            <Link 
+              href="/trading" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/trading') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              Trading
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
+}
