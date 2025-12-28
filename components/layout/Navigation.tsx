@@ -97,6 +97,16 @@ export default function Navigation() {
             >
               🔥 Hot Tokens
             </Link>
+            <Link 
+              href="/trading" 
+              className={`px-3 py-2 cursor-pointer transition-colors duration-200 ${
+                isActive('/trading') 
+                  ? 'border-b-2 border-blue-500 text-blue-500' 
+                  : 'text-gray-400 hover:text-gray-200'
+              }`}
+            >
+              Trading
+            </Link>
           </div>
         </div>
       </div>
