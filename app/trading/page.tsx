@@ -2,6 +2,18 @@
 
 import { useState, useEffect } from 'react'
 
+/**
+ * Avantis Fi Trading Interface
+ * 
+ * This is a demonstration UI for the Avantis SDK integration.
+ * For production use, uncomment and configure the SDK imports:
+ * 
+ * import { AvantisSDK, PositionSide, OrderType } from '@todayapp/avantis-sdk'
+ * 
+ * SDK Documentation: https://sdk.avantisfi.com
+ * NPM Package: @todayapp/avantis-sdk
+ */
+
 export default function TradingPage() {
   const [selectedPair, setSelectedPair] = useState('BTC/USD')
   const [positionSide, setPositionSide] = useState<'LONG' | 'SHORT'>('LONG')
@@ -45,7 +57,16 @@ export default function TradingPage() {
 
   const handleConnect = async () => {
     setLoading(true)
-    // Simulate wallet connection
+    
+    /**
+     * TODO: Implement real wallet connection using Avantis SDK
+     * 
+     * Example implementation:
+     * const sdk = new AvantisSDK('base')
+     * await sdk.setSigner({ type: 'wallet', provider: window.ethereum })
+     * 
+     * For now, this is a simulated connection for UI demonstration
+     */
     await new Promise(resolve => setTimeout(resolve, 1000))
     setIsConnected(true)
     setLoading(false)
@@ -63,9 +84,27 @@ export default function TradingPage() {
 
     setLoading(true)
     
-    // Simulate position opening
+    /**
+     * TODO: Implement real position opening using Avantis SDK
+     * 
+     * Example implementation:
+     * const sdk = new AvantisSDK('base')
+     * const result = await sdk.trader.openPosition({
+     *   pair: selectedPair,
+     *   side: positionSide === 'LONG' ? PositionSide.LONG : PositionSide.SHORT,
+     *   size: parseFloat(positionSize),
+     *   leverage: parseFloat(leverage),
+     *   orderType: orderType === 'MARKET' ? OrderType.MARKET : OrderType.LIMIT,
+     *   stopLoss: stopLoss ? parseFloat(stopLoss) : undefined,
+     *   takeProfit: takeProfit ? parseFloat(takeProfit) : undefined,
+     *   slippage: parseFloat(slippage)
+     * })
+     * 
+     * For now, this is a simulated transaction for UI demonstration
+     */
     await new Promise(resolve => setTimeout(resolve, 2000))
     
+    // TODO: Replace alert with proper toast notification
     alert(`Position opened successfully!\n\nPair: ${selectedPair}\nSide: ${positionSide}\nSize: $${positionSize}\nLeverage: ${leverage}x\nOrder Type: ${orderType}`)
     
     setLoading(false)
@@ -101,6 +140,21 @@ export default function TradingPage() {
 
   return (
     <div className="max-w-7xl mx-auto">
+      {/* Demo Mode Banner */}
+      <div className="mb-6 bg-yellow-900/30 border-2 border-yellow-500/50 rounded-lg p-4">
+        <div className="flex items-start space-x-3">
+          <div className="text-yellow-400 text-2xl">⚠️</div>
+          <div>
+            <h3 className="font-bold text-yellow-400 mb-1">DEMO MODE - UI DEMONSTRATION ONLY</h3>
+            <p className="text-sm text-gray-300">
+              This is a demonstration interface showing Avantis SDK integration capabilities. 
+              No real transactions are executed. For production deployment, wallet connection and 
+              trading functions need to be activated with proper Avantis SDK configuration.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="mb-8">
         <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
           Avantis Trading
